@@ -1,23 +1,19 @@
-package org.example.Livraisonderepas.entities;
+package org.example.Livraisonderepas.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Panier {
+public class RepasItem {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private Long id;
 
-    public Panier() {
-    }
+    @ManyToOne
+    private Repas repas;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @ManyToOne
+    private Commande commande;
 }
