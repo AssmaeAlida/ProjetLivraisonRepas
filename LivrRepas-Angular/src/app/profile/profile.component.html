@@ -1,0 +1,59 @@
+<div class="profile-container">
+    <h2>Mon Profil</h2>
+  
+    <!-- Section des informations personnelles -->
+    <div class="user-info">
+      <div class="user-info-header">
+        <img class="profile-picture" src="assets/images/foods/photoProfile.png" alt="Photo de profil">
+        <div class="user-details">
+          <div class="user-field">
+            <label for="name">Nom :</label>
+            <input id="name" [(ngModel)]="userInfo.name" type="text" placeholder="Entrez votre nom">
+          </div>
+          <div class="user-field">
+            <label for="email">Email :</label>
+            <input id="email" [(ngModel)]="userInfo.email" type="email" placeholder="Entrez votre email">
+          </div>
+          <div class="user-field">
+            <label for="phone">Téléphone :</label>
+            <input id="phone" [(ngModel)]="userInfo.phone" type="tel" placeholder="Entrez votre téléphone">
+          </div>
+          <div class="user-field">
+            <label for="address">Adresse :</label>
+            <input id="address" [(ngModel)]="userInfo.address" type="text" placeholder="Entrez votre adresse">
+          </div>
+          <button class="save-btn" (click)="saveUserInfo()">Sauvegarder</button>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Section de l'historique des commandes -->
+    <div class="order-history">
+      <h3>Historique des commandes</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Repas</th>
+            <th>Date</th>
+            <th>Total ($)</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orderHistory; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ order.foodName }}</td>
+            <td>{{ order.date }}</td>
+            <td>{{ order.total | currency:'$':'symbol' }}</td>
+            <td>
+              <button class="delete-btn" (click)="deleteOrder(i)">
+                <i class="fa fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

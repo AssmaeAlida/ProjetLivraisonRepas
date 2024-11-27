@@ -1,0 +1,73 @@
+/* Conteneur principal */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem auto 1.5rem auto;
+    max-width: 600px; /* Contrôle la largeur maximale */
+  }
+  
+  /* Champ d'entrée */
+  .search-container input {
+    border-radius: 25px 0 0 25px; /* Coins arrondis uniquement à gauche */
+    border: 1px solid #ddd;
+    height: 3.5rem;
+    width: 100%;
+    background-color: #f9f9f9; /* Couleur de fond plus claire */
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease-in-out; /* Animation pour un effet fluide */
+  }
+  
+  .search-container input:focus {
+    border-color: #eb0029; /* Couleur de la bordure en mode focus */
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(235, 0, 41, 0.3); /* Lueur subtile */
+  }
+  
+  /* Bouton de recherche */
+  .search-container button {
+    height: 3.5rem;
+    width: 7rem;
+    font-size: 1rem;
+    border-radius: 0 25px 25px 0; /* Coins arrondis uniquement à droite */
+    border: none;
+    background-color: #eb0029;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease-in-out; /* Animation fluide pour hover */
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .search-container button:hover {
+    opacity: 0.9;
+    transform: scale(1.05); /* Effet de zoom subtil */
+  }
+  
+  /* Bouton : icône */
+  .search-container button i {
+    font-size: 1.2rem;
+  }
+  
+  /* Petits écrans */
+  @media (max-width: 768px) {
+    .search-container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .search-container input,
+    .search-container button {
+      width: 100%;
+      border-radius: 25px; /* Coins arrondis partout */
+    }
+  }
+  

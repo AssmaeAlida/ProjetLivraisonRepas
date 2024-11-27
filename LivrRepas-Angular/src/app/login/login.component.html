@@ -1,0 +1,54 @@
+<!-- main-container: un conteneur parent qui prend toute la hauteur -->
+<div class="main-container">
+  <div class="login-container">
+    <h2 > Login</h2>
+    <form #loginForm="">
+      <!-- Email Input -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          name="email"
+          placeholder="Enter your email..."
+          required
+        />
+      </div>
+
+      <!-- Password Input -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          name="password"
+          placeholder="Enter your password..."
+          required
+        />
+        <div class="forget-password">
+          <a href="/forgot-password">Forget Password?</a>
+        </div>
+      </div>
+
+      <!-- Login Button -->
+      <button   type="submit" class="btn-login" >
+        Login
+      </button>
+
+      <!-- Divider and Create Account Link -->
+      <div class="divider">
+        <hr />
+        <span>OR</span>
+        <hr />
+      </div>
+      <div class="create-account">
+        <p>
+          Don't have an account? 
+          <a  href="/register" >Create your account here</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
