@@ -1,0 +1,255 @@
+/* Conteneur principal */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 1.5rem;
+  }
+  
+  ul {
+    display: flex;
+    flex-direction: column;
+    flex: 3 0;
+    justify-content: space-evenly;
+    border: 1px solid #ffbbbb;
+    border-radius: 1rem;
+    list-style-type: none;
+    margin: 0.5rem;
+    padding: 0;
+  }
+  
+  ul li {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e4e4e4;
+  }
+  
+  ul li:last-child {
+    border: none;
+  }
+  
+  ul li img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100rem;
+    object-fit: cover;
+  }
+  
+  ul li div {
+    padding: 1rem;
+  }
+  
+  ul li div:not(:first-child) {
+    flex-basis: 18%;
+  }
+  
+  ul li select {
+    width: 3rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    font-size: 1.1rem;
+    font-weight: 100;
+  }
+  
+  /* Bouton Remove avec icône corbeille */
+  ul .remove-button {
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    color: #eb0029;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  ul .remove-button i {
+    font-size: 1.2rem; /* Taille de l'icône */
+    margin-right: 0.5rem; /* Espace entre l'icône et le texte */
+  }
+  
+  ul .remove-button:hover {
+    color: #c30022; /* Changement de couleur au survol */
+  }
+  
+  /* Section checkout */
+  .checkout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 3;
+    height: auto;
+    border: 1px solid #ffbbbb;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+  
+  .checkout > div {
+    font-size: 1.4rem;
+    margin: 1rem;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .checkout .foods-count {
+    margin-bottom: 1.5rem;
+  }
+  
+  .checkout .foods-count::before {
+    content: 'Count: ';
+    color: grey;
+  }
+  
+  .checkout .total-price::before {
+    content: 'Price: ';
+    color: grey;
+  }
+  /* Alignement côte à côte des boutons */
+ /* Conteneur des boutons */
+ .buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1rem; 
+
+  }
+  
+  
+  /* Styles des boutons */
+  .filled-button,
+  .outlined-button {
+    flex: 0 0 auto; /* Empêche les boutons de s'étirer ou de se compresser */
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Bouton rempli */
+  .filled-button {
+    background-color: #eb0029;
+    color: white;
+    border: none;
+  }
+  
+  .filled-button:hover {
+    background-color: #c30022;
+  }
+  
+  /* Bouton avec bordure */
+  .outlined-button {
+    background-color: transparent;
+    color: #eb0029;
+    border: 2px solid #eb0029;
+  }
+  
+  .outlined-button:hover {
+    background-color: #fbe1e5;
+  }
+  
+
+/********** Modal **********/
+
+
+
+ /* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Modal Content */
+  .modal {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .modal h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #EB0029; /* Titre en rouge */
+  }
+  
+  .modal div {
+    margin-bottom: 15px;
+  }
+  
+  .modal label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333; /* Texte des labels */
+  }
+  
+  .modal input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .modal button {
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Bouton rempli */
+  .filled-button1 {
+    margin-right: 17px;
+    margin-left: 115px;
+    background-color: #EB0029;
+    color: white;
+    border: none;
+  }
+  
+  .filled-button1:hover {
+    background-color: #c90022;
+  }
+  
+  /* Bouton contour */
+  .outlined-button1 {
+    background-color: white;
+    color: #EB0029;
+    border: 1px solid #EB0029;
+  }
+  
+  .outlined-button1:hover {
+    background-color: #f8f8f8;
+    color: #c90022;
+  }
+  

@@ -1,0 +1,53 @@
+<header>
+  <div class="container">
+    <!-- Logo Section -->
+    <a href="#" routerLink="/" class="logo">
+      <span class="logo-text">FastDelivery</span>
+    </a>
+    <nav>
+      <ul>
+        <li>
+          <a href="#" routerLink="/first-page">Why FastDelivery?</a>
+        </li>
+        <li>
+          <a href="#" routerLink="/services">Services</a>
+        </li>
+        <li>
+          <a href="#" routerLink="/">Menu</a>
+        </li>
+        <li>
+          <a href="#" routerLink="/contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Icons Section -->
+    <div class="icons">
+      <a href="/cart-page" class="cart-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 20 22" fill="none">
+          <path
+            d="M2.64528 9.02016C2.68215 8.56073 2.89072 8.13205 3.22945 7.81948C3.56818 7.50692 4.01221 7.3334 4.47311 7.3335H15.5263C15.9872 7.3334 16.4312 7.50692 16.7699 7.81948C17.1087 8.13205 17.3172 8.56073 17.3541 9.02016L18.0902 18.1868C18.1104 18.4391 18.0782 18.6928 17.9956 18.932C17.913 19.1712 17.7818 19.3907 17.6101 19.5767C17.4385 19.7627 17.2303 19.9112 16.9985 20.0127C16.7667 20.1143 16.5164 20.1668 16.2633 20.1668H3.73611C3.48304 20.1668 3.23273 20.1143 3.00093 20.0127C2.76913 19.9112 2.56087 19.7627 2.38925 19.5767C2.21764 19.3907 2.08639 19.1712 2.00377 18.932C1.92115 18.6928 1.88895 18.4391 1.9092 18.1868L2.64528 9.02016V9.02016Z"
+            stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path
+            d="M13.6663 10.0835V5.50016C13.6663 4.5277 13.28 3.59507 12.5924 2.90744C11.9048 2.2198 10.9721 1.8335 9.99967 1.8335C9.02721 1.8335 8.09458 2.2198 7.40695 2.90744C6.71932 3.59507 6.33301 4.5277 6.33301 5.50016V10.0835"
+            stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+
+      <!-- Show Profile Image or Login Button -->
+      <ng-container *ngIf="isLoggedIn; else showLoginButton">
+        <div class="profile-container" (click)="toggleDropdown()">
+          <img [src]="profileImage" alt="Profile" class="profile-image" />
+
+          <div class="dropdown" *ngIf="showDropdown">
+            <a routerLink="/profile">Mon profil</a>
+              <a href="/login" (click)="logout()">Logout</a>          </div>
+        </div>
+      </ng-container>
+
+      <ng-template #showLoginButton>
+        <a routerLink="/login" class="login-btn">Login</a>
+      </ng-template>
+    </div>
+  </div>
+</header>

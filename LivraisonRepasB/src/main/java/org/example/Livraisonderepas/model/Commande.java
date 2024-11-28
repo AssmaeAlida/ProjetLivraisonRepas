@@ -1,7 +1,6 @@
 package org.example.Livraisonderepas.model;
 
 import jakarta.persistence.*;
-import org.example.Livraisonderepas.security.model.Client;
 
 import java.util.Date;
 import java.util.List;
@@ -13,10 +12,11 @@ public class Commande {
     private Long id;
     private Date date;
     private Boolean statusCommmende;
+    private String reference;
 
     @ManyToOne
     @JoinColumn(name = "client_id")  // Nom de la colonne dans la base de données
-    private Client client;  // Association avec l'entité Client
+    private User client;  // Association avec l'entité Client
 
     @OneToMany
     private List<CommandeItem> commandeItems;
@@ -58,11 +58,27 @@ public class Commande {
         this.commandeItems = commandeItems;
     }
 
-    public Client getClient() {
+    public User getClient() {
         return client;
     }
 
-    public void setClient(Client client) {
+    public void setClient(User client) {
         this.client = client;
+    }
+
+    public List<RepasItem> getRepasItems() {
+        return repasItems;
+    }
+
+    public void setRepasItems(List<RepasItem> repasItems) {
+        this.repasItems = repasItems;
+    }
+
+    public String getReference() {
+        return reference;
+    }
+
+    public void setReference(String reference) {
+        this.reference = reference;
     }
 }

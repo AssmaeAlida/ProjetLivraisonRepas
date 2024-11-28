@@ -1,7 +1,6 @@
 package org.example.Livraisonderepas.model;
 
 import jakarta.persistence.*;
-import org.example.Livraisonderepas.security.model.Admin;
 
 import java.util.List;
 
@@ -14,7 +13,7 @@ public class Repas {
     private String description;
     private double prix;
     private String imageUrl;
-    private Enum Categorie;
+    private Categorie categorie;
 
     @ManyToOne
     private Admin admin;
@@ -69,11 +68,35 @@ public class Repas {
         this.imageUrl = imageUrl;
     }
 
-    public Enum getCategorie() {
-        return Categorie;
+    public Categorie getCategorie() {
+        return categorie;
     }
 
-    public void setCategorie(Enum categorie) {
-        Categorie = categorie;
+    public void setCategorie(Categorie categorie) {
+        this.categorie = categorie;
+    }
+
+    public Admin getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Admin admin) {
+        this.admin = admin;
+    }
+
+    public Commentaire getCommentaire() {
+        return commentaire;
+    }
+
+    public void setCommentaire(Commentaire commentaire) {
+        this.commentaire = commentaire;
+    }
+
+    public List<Repas> getRepasList() {
+        return repasList;
+    }
+
+    public void setRepasList(List<Repas> repasList) {
+        this.repasList = repasList;
     }
 }

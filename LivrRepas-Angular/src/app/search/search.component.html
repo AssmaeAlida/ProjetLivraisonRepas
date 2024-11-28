@@ -1,0 +1,12 @@
+<div class="search-container">
+    <input
+      type="text"
+      placeholder="Search your Food here ... "
+      [(ngModel)]="searchTerm"
+      (change)="search()"
+    />
+    <button (click)="search()">
+      <i class="fa-solid fa-search"></i> Search
+    </button>
+  </div>
+  

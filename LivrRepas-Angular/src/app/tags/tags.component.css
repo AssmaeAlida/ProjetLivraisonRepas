@@ -1,0 +1,57 @@
+/* Conteneur principal */
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem; /* Espacement entre les éléments */
+    justify-content: center; /* Centrer les éléments */
+    margin: 1rem auto; /* Marges autour */
+  }
+  
+  /* Lien individuel */
+  .tags-container a {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 0.4rem 1rem;
+    margin: 0.2rem 0.15rem;
+    border-radius: 10rem;
+    font-weight: 600;
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  /* Survol du lien */
+  .tags-container a:hover {
+    background-color: #eb0029;
+    color: white;
+    transform: scale(1.05); /* Légère mise à l'échelle */
+  }
+  
+  /* Image circulaire */
+  .tags-container a img {
+    width: 30px; /* Taille de l'image */
+    height: 30px;
+    border-radius: 50%; /* Forme circulaire */
+    margin-right: 0.5rem; /* Espacement entre l'image et le texte */
+    object-fit: cover; /* Adapter l'image au cadre */
+    border: 2px solid #eb0029; /* Bordure autour de l'image */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .tags-container {
+      justify-content: flex-start; /* Aligner les éléments à gauche sur les petits écrans */
+    }
+  
+    .tags-container a {
+      font-size: 0.9rem; /* Taille du texte réduite */
+      padding: 0.3rem 0.8rem;
+    }
+  
+    .tags-container a img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  

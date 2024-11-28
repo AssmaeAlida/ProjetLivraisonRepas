@@ -1,7 +1,6 @@
 package org.example.Livraisonderepas.model;
 
 import jakarta.persistence.*;
-import org.example.Livraisonderepas.security.model.Client;
 
 import java.util.Date;
 import java.util.List;
@@ -16,13 +15,11 @@ public class Commentaire {
     private Date date;
 
     @ManyToOne
-    private Client client;
+    private User client;
 
     @OneToMany
     private List<Repas> repas;
 
-    public Commentaire() {
-    }
 
     public Long getId() {
         return id;
@@ -54,5 +51,21 @@ public class Commentaire {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public User getClient() {
+        return client;
+    }
+
+    public void setClient(User client) {
+        this.client = client;
+    }
+
+    public List<Repas> getRepas() {
+        return repas;
+    }
+
+    public void setRepas(List<Repas> repas) {
+        this.repas = repas;
     }
 }

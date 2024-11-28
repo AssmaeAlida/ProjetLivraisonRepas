@@ -1,0 +1,19 @@
+<div *ngIf="tags" class="tags-container">
+  <a *ngFor="let tag of tags" routerLink="/tag/{{ tag.name }}">
+    <img
+      src="{{ tag.imageUrl || 'assets/default-tag.png' }}"
+      alt="{{ tag.name }}"
+    />
+    {{ tag.name }} ({{ tag.count }})
+  </a>
+</div>
+
+<div *ngIf="foodPageTags" class="tags-container">
+  <a *ngFor="let tagName of foodPageTags" routerLink="/tag/{{ tagName }}">
+    <img
+      src="assets/default-tag.png"
+      alt="{{ tagName }}"
+    />
+    {{ tagName }}
+  </a>
+</div>

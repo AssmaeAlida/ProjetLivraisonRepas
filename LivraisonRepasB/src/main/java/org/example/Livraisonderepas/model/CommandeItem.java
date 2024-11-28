@@ -4,7 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import org.example.Livraisonderepas.security.model.Client;
 
 @Entity
 public class CommandeItem {
@@ -16,10 +15,8 @@ public class CommandeItem {
     private Commande commande;
 
     @ManyToOne
-    private Client client;
+    private User client;
 
-    public CommandeItem() {
-    }
 
     public Long getId() {
         return id;
@@ -37,11 +34,12 @@ public class CommandeItem {
         this.commande = commande;
     }
 
-    public Client getClient() {
+    public User getClient() {
         return client;
     }
 
-    public void setClient(Client client) {
+    public void setClient(User client) {
         this.client = client;
     }
+
 }

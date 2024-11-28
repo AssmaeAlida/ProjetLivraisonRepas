@@ -1,0 +1,108 @@
+.food-list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  
+  .food-item {
+    margin: 0.5rem;
+  }
+  
+  .food-card {
+    display: flex;
+    flex-direction: column;
+    height: 24rem;
+    width: 20rem;
+    border: 1px solid #e6e6e6;
+    border-radius: 1rem;
+    overflow: hidden;
+    text-decoration: none;
+    background-color: white;
+    color: #333;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .food-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  
+  .food-image {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  
+  .food-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .food-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .food-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .food-favorite {
+    font-size: 1.5rem;
+    color: #ff6b6b;
+    transition: color 0.3s;
+  }
+  
+  .food-favorite.not {
+    color: lightgray;
+  }
+  
+  .food-stars {
+    margin: 0.5rem 0;
+  }
+  
+  .food-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0;
+  }
+  
+  .food-origins {
+    flex: 1;
+  }
+  
+  .food-origin {
+    background-color: #f7f7f7;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    margin-right: 0.3rem;
+    color: #666;
+  }
+  
+  .food-cook-time {
+    font-size: 0.9rem;
+    color: #333;
+    text-align: right;
+  }
+  
+  .food-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+    margin-top: 0.5rem;
+  }
+
