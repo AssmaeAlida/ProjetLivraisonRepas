@@ -7,8 +7,8 @@
         <img class="profile-picture" src="assets/images/foods/photoProfile.png" alt="Photo de profil">
         <div class="user-details">
           <div class="user-field">
-            <label for="name">Nom :</label>
-            <input id="name" [(ngModel)]="userInfo.name" type="text" placeholder="Entrez votre nom">
+            <label for="name">Full Name :</label>
+            <input id="name" [(ngModel)]="userInfo.fullName" type="text" placeholder="Entrez votre nom et prenom">
           </div>
           <div class="user-field">
             <label for="email">Email :</label>
@@ -16,11 +16,11 @@
           </div>
           <div class="user-field">
             <label for="phone">Téléphone :</label>
-            <input id="phone" [(ngModel)]="userInfo.phone" type="tel" placeholder="Entrez votre téléphone">
+            <input id="phone" [(ngModel)]="userInfo.numTel" type="tel" placeholder="Entrez votre téléphone">
           </div>
           <div class="user-field">
             <label for="address">Adresse :</label>
-            <input id="address" [(ngModel)]="userInfo.address" type="text" placeholder="Entrez votre adresse">
+            <input id="address" [(ngModel)]="userInfo.lieu" type="text" placeholder="Entrez votre adresse">
           </div>
           <button class="save-btn" (click)="saveUserInfo()">Sauvegarder</button>
         </div>

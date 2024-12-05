@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/register/AuthSevice';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,20 +12,25 @@ export class HeaderComponent implements OnInit {
   profileImage = 'assets/images/foods/photoProfile.png';
   showDropdown = false;
 
-  constructor() {}
+  constructor(public authService: AuthService, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isLoggedIn = this.authService.isLoggedIn();
+
+  }
 
   toggleDropdown(): void {
     this.showDropdown = !this.showDropdown;
   }
 
   logout(): void {
-    // Logique de déconnexion
+    this.authService.signOut();
     console.log('Déconnexion réussie');
     this.isLoggedIn = false;
     this.showDropdown = false;
     console.log('isLoggedIn:', this.isLoggedIn);
+    this.router.navigate(['/login']);
+
 
   }
 }

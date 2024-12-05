@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -57,21 +58,25 @@ public class UserController {
     public User signIn(@RequestBody User user) {
         return userService.signIn(user.getEmail(), user.getPassword());
     }
-    @PostMapping("/signUp")
-    public int signUp(@RequestBody User user) {
-        return userService.signUp(user.getEmail(), user.getPassword());
+
+
+    @PostMapping("/signUp/fullName/{fullName}/email/{email}/password/{password}")
+    public int signUp(@PathVariable String fullName,@PathVariable String email, @PathVariable String password) {
+        return userService.signUp(fullName,email, password);
     }
 
     //forgot password
-    @PostMapping("/forgotPassword")
-    public User forgotPassword(@RequestBody User user) {
-        return userService.forgotPassword(user.getEmail());
+    @PostMapping("/forgotPassword/{email}")
+    @Transactional
+    public User forgotPassword(@PathVariable String email) {
+        return userService.forgotPassword(email);
     }
 
     //change password
-    @PostMapping("/changePassword")
-    public User changePassword(@RequestBody User user) {
-        return userService.changePassword(user.getToken(), user.getPassword());
+    @PostMapping("/changePassword/token/{token}/password/{password}")
+    @Transactional
+    public User changePassword(@PathVariable String token,@PathVariable String password) {
+        return userService.changePassword(token, password);
     }
 
     @PostMapping("/updateUser")
@@ -79,8 +84,12 @@ public class UserController {
         return userService.updateUser(updatedUser);
     }
 
+    @GetMapping("/{id}")
+    public User findById(@PathVariable Long id) {
+        return userService.findById(id);
+    }
+
 
 
 
 }
-
