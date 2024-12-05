@@ -34,10 +34,11 @@ public class UtilisateurService {
         return null;
     }
 
-    public int signUp(String email, String password) {
+    public int signUp(String fullName,String email, String password) {
         User existingUser = userRepository.findByEmail(email);
         if (existingUser == null) {
             User newUser = new User();
+            newUser.setFullName(fullName);
             newUser.setEmail(email);
             newUser.setPassword(passwordEncoder.encode(password)); // Hash the password before storing
             userRepository.save(newUser);
@@ -65,6 +66,7 @@ public class UtilisateurService {
         return userRepository.findAll();
     }
 
+    @Transactional
     public User forgotPassword(String email) {
         User user = userRepository.findByEmail(email);
         if (user != null) {
@@ -84,6 +86,7 @@ public class UtilisateurService {
     }
 
 
+    @Transactional
     public User changePassword(String token, String newPassword) {
         User user = userRepository.findByToken(token);
         if (user != null) {
@@ -100,28 +103,31 @@ public class UtilisateurService {
     }
 
 
-  @Transactional
-public User updateUser(User updatedUser) {
-    User existingUser = userRepository.findById(updatedUser.getId())
-            .orElseThrow(() -> new RuntimeException("User not found."));
-    if (updatedUser.getNom() != null) {
-        existingUser.setNom(updatedUser.getNom());
+    @Transactional
+    public User updateUser(User updatedUser) {
+        User existingUser = userRepository.findById(updatedUser.getId())
+                .orElseThrow(() -> new RuntimeException("User not found."));
+        if (updatedUser.getFullName() != null) {
+            existingUser.setFullName(updatedUser.getFullName());
+        }
+        if (updatedUser.getRole() != null) {
+            existingUser.setRole(updatedUser.getRole());
+        }
+        if (updatedUser.getEmail() != null) {
+            existingUser.setEmail(updatedUser.getEmail());
+        }
+        if (updatedUser.getPassword() != null) {
+            existingUser.setPassword(passwordEncoder.encode(updatedUser.getPassword()));
+        }
+        if (updatedUser.getNumTel() != null) {
+            existingUser.setNumTel(updatedUser.getNumTel());
+        }
+        if (updatedUser.getLieu() != null) {
+            existingUser.setLieu(updatedUser.getLieu());
+        }
+        // Add other fields like name, address, etc.
+        return userRepository.save(existingUser);
     }
-    if (updatedUser.getPrenom() != null) {
-        existingUser.setPrenom(updatedUser.getPrenom());
-    }
-    if (updatedUser.getRole() != null) {
-        existingUser.setRole(updatedUser.getRole());
-    }
-    if (updatedUser.getEmail() != null) {
-        existingUser.setEmail(updatedUser.getEmail());
-    }
-    if (updatedUser.getPassword() != null) {
-        existingUser.setPassword(passwordEncoder.encode(updatedUser.getPassword()));
-    }
-    // Add other fields like name, address, etc.
-    return userRepository.save(existingUser);
-}
 
 
     @Transactional

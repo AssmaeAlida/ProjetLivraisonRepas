@@ -17,6 +17,9 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { FirstPageComponent } from './first-page/first-page.component';
 import { FoodFilterComponent } from './food-filter/food-filter.component';
 import { ProfileComponent } from './profile/profile.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -29,6 +32,7 @@ import { ProfileComponent } from './profile/profile.component';
     CartPageComponent,
     NotFoundComponent,
     RegisterComponent,
+    LoginComponent,
     ForgetPasswordComponent,
     FirstPageComponent,
     FoodFilterComponent,
@@ -39,7 +43,8 @@ import { ProfileComponent } from './profile/profile.component';
     BrowserModule,
     AppRoutingModule,
     RatingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
