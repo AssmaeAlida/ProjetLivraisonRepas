@@ -1,0 +1,92 @@
+/* Layout for Sidebar and Main Content */
+.reviews-layout {
+    display: flex;
+  }
+  
+  /* Sidebar Styling */
+  app-sidebar {
+    flex: 0 0 250px; /* Set the sidebar width */
+    height: 100vh;
+    background-color: #f7f7f7; /* Match the sidebar design */
+    border-right: 1px solid #ddd;
+  }
+  
+  /* Main Content Styling */
+  .reviews-container {
+    flex: 1; /* Fill the remaining space */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header */
+  .reviews-container h2 {
+    font-size: 24px;
+    margin-bottom: 58px;
+    margin-left: 2%;
+    color: #333;
+  }
+  
+  /* Table Styles */
+  .reviews-list table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .reviews-list th,
+  .reviews-list td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .reviews-list th {
+    background-color: #f0f0f0;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .reviews-list tbody tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+  
+  .reviews-list tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Meals List */
+  .reviews-list ul {
+    margin: 0;
+    padding-left: 15px;
+    list-style-type: disc;
+  }
+  /* Delete Button */
+.delete-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #e53935; /* Red color for delete */
+    font-size: 18px;
+    padding: 5px;
+    transition: transform 0.2s ease, color 0.3s ease;
+  }
+  
+  .delete-btn:hover {
+    color: #b71c1c; /* Darker red on hover */
+    transform: scale(1.2); /* Slightly enlarge the icon */
+  }
+  
+  .delete-btn i {
+    pointer-events: none; /* Prevent hover effects on the icon itself */
+  }
+  
+  .action-icon {
+    font-size: 20px;
+    color: #4caf50;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: transform 0.3s, color 0.3s;
+  }
+  

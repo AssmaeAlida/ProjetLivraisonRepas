@@ -1,0 +1,82 @@
+.orders-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .orders-section .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .header h2 {
+    margin-left: 23%;
+    font-size: 24px;
+    color: #2c3e50;
+  }
+  .orders-table table {
+    width: 79%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: 19%;
+  }
+  
+  .orders-table th, .orders-table td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .orders-table th {
+    background-color: #f0f0f0;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .orders-table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+  
+  .orders-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+
+  /* Base button styles */
+.apply-btn {
+    padding: 6px 12px;
+    background-color: #EB0029;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Disabled button */
+  .apply-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Hover effect for active buttons */
+  .apply-btn:hover:not(:disabled) {
+    background-color: #D40026;
+  }
+  
+  /* Completed state */
+  .completed-btn {
+    background-color: #388e3c !important;
+    color: #fff;
+    cursor: default; /* No pointer cursor for completed state */
+  }
+  

@@ -1,0 +1,199 @@
+.dashboard-container {
+    display: flex;
+    height: 160vh;
+    background-color: #f7f8fa;
+  }
+  
+  app-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .search-bar input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .dashboard-cards {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .card {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .charts {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .chart-section {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .total-revenue {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .line-chart,
+  .customer-map {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .customer-reviews {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .reviews {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .review-card {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+
+
+.chart-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.line-chart{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+/* Section des graphiques */
+.charts img{
+  width: 100%; /* S'adapte à la largeur du conteneur */
+  max-width: 400px; /* Limite la largeur maximale */
+  height: auto; /* Garde les proportions */
+  margin: 0 auto; /* Centrer dans le conteneur */
+  display: block; /* Assure un bon comportement */
+}
+.total-revenue img {
+  width: 70%; /* S'adapte à la largeur du conteneur */
+  max-width: 589px; /* Limite la largeur maximale */
+  height: auto; /* Garde les proportions */
+  margin: 0 auto; /* Centrer dans le conteneur */
+  display: block; /* Assure un bon comportement */
+}
+
+.customer-map {
+  width: 100%; /* S'adapte à la largeur du conteneur */
+  max-width: 400px; /* Limite la largeur maximale */
+  height: auto; /* Garde les proportions */
+  margin: 0 auto; /* Centrer dans le conteneur */
+  display: block;
+
+}
+
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.icon-user {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: block; /* Assure que le menu est visible */
+
+  position: absolute;
+  top: 76px; /* Ajustez selon vos besoins */
+  right: 134px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.dropdown-menu button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  text-align: left;
+  width: 100%;
+}
+
+.dropdown-menu button:hover {
+  background-color: #f4f4f4;
+}

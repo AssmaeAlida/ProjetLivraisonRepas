@@ -1,0 +1,148 @@
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Top Bar -->
+    <div class="search-part">
+      <input type="text" placeholder="Search meals..." />
+      <i class="icon-search"></i>
+    </div>
+
+    <!-- Meals List Section -->
+    <section class="meals-section">
+      <div class="header">
+        <h2>Meals List</h2>
+        <button class="add-meal-btn" (click)="showAddMealModal()">Add Meal</button>
+      </div>
+
+      <!-- Meals Table -->
+      <div class="meals-table">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Image</th>
+              <th>Meal Name</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let meal of meals">
+              <td>{{ meal.id }}</td>
+              <td><img [src]="meal.image" alt="{{ meal.name }}" class="meal-image" /></td>
+              <td>{{ meal.name }}</td>
+              <td>{{ meal.description }}</td>
+              <td>{{ meal.price | currency }}</td>
+              <td>
+                <i class="fa fa-eye action-icon" (click)="showViewMealModal(meal)" title="View"></i>
+                <i class="fa fa-edit action-icon" (click)="showEditMealModal(meal)" title="Edit"></i>
+                <i class="fa fa-trash action-icon" (click)="showDeleteMealModal(meal)" title="Delete"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Add Meal Modal -->
+  <!-- Add Meal Modal -->
+  <div class="modal" *ngIf="isAddMealModalVisible">
+       <div class="modal-content">
+      <h3>Add New Meal</h3>
+      <!-- Image trigger for file input -->
+      <div class="image-upload">
+          <img src="assets/images/foods/defaultImage.jpg" alt="Upload Image" (click)="fileInput.click()" class="upload-icon" />
+          <input
+          type="file"
+          class="file-input"
+          #fileInput
+          (change)="handleFileInput($event)"
+          style="display: none"
+           />
+       </div>  
+    <form class="meal-form" (ngSubmit)="addMeal()">
+      <input type="text" placeholder="Meal Name" [(ngModel)]="newMeal.name" name="name" required />
+      <textarea placeholder="Meal Description" [(ngModel)]="newMeal.description" name="description"></textarea>
+      <input type="number" placeholder="Price" [(ngModel)]="newMeal.price" name="price" required />
+
+      <!-- Image trigger for file input -->
+      <div class="image-upload">
+           
+      <input
+          type="file"
+          class="file-input"
+          #fileInput
+          (change)="handleFileInput($event)"
+          style="display: none"
+        />
+      </div>
+
+      <div class="modal-actions">
+        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="button" class="btn btn-secondary" (click)="closeAddMealModal()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+  <!-- View Meal Modal -->
+  <div class="modal" *ngIf="isViewMealModalVisible">
+    <div class="modal-content">
+      <h3>{{ selectedMeal?.name }}</h3>
+      <p>{{ selectedMeal?.description }}</p>
+      <p><strong>Price:</strong> {{ selectedMeal?.price | currency }}</p>
+      <img [src]="selectedMeal?.image" alt="{{ selectedMeal?.name }}" />
+      <button (click)="closeViewMealModal()">Close</button>
+    </div>
+  </div>
+
+ <!-- Edit Meal Modal -->
+<div class="modal" *ngIf="isEditMealModalVisible">
+  <div class="modal-content">
+    <h3>Edit Meal</h3>
+
+    <!-- Image trigger for file input -->
+    <div class="image-upload">
+      <img
+        [src]="selectedMeal.image || 'assets/images/foods/defaultImage.jpg'"
+        alt="Meal Image"
+        class="upload-icon"
+        (click)="fileInput.click()"
+      />
+      <input
+        type="file"
+        class="file-input"
+        #fileInput
+        (change)="handleFileInput($event)"
+        style="display: none"
+      />
+    </div>
+
+    <form (ngSubmit)="updateMeal()">
+      <input type="text" [(ngModel)]="selectedMeal.name" name="name" required />
+      <textarea [(ngModel)]="selectedMeal.description" name="description"></textarea>
+      <input type="number" [(ngModel)]="selectedMeal.price" name="price" required />
+
+      <div class="modal-actions">
+        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="button" class="btn btn-secondary" (click)="closeEditMealModal()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+  <!-- Delete Meal Modal -->
+  <div class="modal" *ngIf="isDeleteMealModalVisible">
+    <div class="modal-content">
+      <h3>Are you sure you want to delete {{ selectedMeal?.name }}?</h3>
+      <button (click)="deleteMeal(selectedMeal?.id)">Yes</button>
+      <button (click)="closeDeleteMealModal()">No</button>
+    </div>
+  </div>
+</div>

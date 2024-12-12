@@ -1,0 +1,41 @@
+<div class="reviews-layout">
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+
+  <!-- Main Reviews Section -->
+  <div class="reviews-container">
+    <h2>Customer Reviews</h2>
+
+    <!-- Reviews List -->
+    <div class="reviews-list">
+      <table>
+        <thead>
+          <tr>
+            <th>Customer Name</th>
+            <th>Order ID</th>
+            <th>Meals</th>
+            <th>Review</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let review of reviews; let i = index">
+            <td>{{ review.customerName }}</td>
+            <td>{{ review.orderId }}</td>
+            <td>
+              <ul>
+                <li *ngFor="let meal of review.meals">{{ meal }}</li>
+              </ul>
+            </td>
+            <td>{{ review.comment }}</td>
+            <td>
+              
+              <i class="fa fa-trash action-icon" (click)="deleteReview(i)"title="Delete"></i>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
