@@ -24,22 +24,29 @@ public class RepasService {
     @Autowired
     private RepasRepository repasRepository;
 
-    public Repas uploadImage(Long id,MultipartFile file)throws IOException {
-        String baseUrl = ".\\images\\Repas\\";
+    public Repas uploadImage(Long id, MultipartFile file) throws IOException {
+        String baseUrl = "/images/Repas/"; // URL to store the image path
         String filename = StringUtils.cleanPath(file.getOriginalFilename());
-//C:\Users\pc\Tps_JEE_ProfCHAKRI\projet-multiplateforme-e2425g7_3\LivraisonRepasB
-        Path storageDirectory = Paths.get("C:\\Users\\pc\\Tps_JEE_ProfCHAKRI\\projet-multiplateforme-e2425g7_3\\E-comerce_Front-end-React\\e-comerce_front-end_react\\public\\images\\Profil\\");
+
+        // Define the storage directory
+        //D:\5IIR\projet-multiplateforme-e2425g7_3\LivrRepas-Angular\src\assets\images\Repas
+        Path storageDirectory = Paths.get("D:\\5IIR\\projet-multiplateforme-e2425g7_3\\LivrRepas-Angular\\src\\assets\\images\\Repas");  // Modify as per your directory
+
+        // Create directory if it doesn't exist
         if (!Files.exists(storageDirectory)) {
             Files.createDirectories(storageDirectory);
         }
 
-        Path destinationPath = storageDirectory.resolve(Path.of(filename));
+        Path destinationPath = storageDirectory.resolve(filename);
+
+        // Transfer the file to the server's directory
         file.transferTo(destinationPath);
 
-
-        Repas repas = repasRepository.findById(id).get();
-        repas.setImageUrl(baseUrl + filename);
+        // Update image URL in the database
+        Repas repas = repasRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Repas not found"));
+        repas.setImageUrl(baseUrl + filename);  // Store the relative image URL
         repasRepository.save(repas);
+
         return repas;
     }
 
