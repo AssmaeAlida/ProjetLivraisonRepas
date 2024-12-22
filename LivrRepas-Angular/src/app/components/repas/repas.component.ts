@@ -1,16 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-repas',
   templateUrl: './repas.component.html',
   styleUrls: ['./repas.component.css'],
 })
-export class RepasComponent implements OnInit {
-  meals = [
-    { id: 1, name: 'Pizza Margherita', price: 12.5, description: 'Classic Italian pizza with tomato and mozzarella.', image: 'assets/images/foods/food-1.jpg' },
-    { id: 2, name: 'Spaghetti Bolognese', price: 10.0, description: 'Traditional pasta with meat sauce.', image: 'assets/images/foods/food-8.jpg' },
-    { id: 3, name: 'Caesar Salad', price: 8.5, description: 'Fresh romaine lettuce with Caesar dressing.', image: 'assets/images/foods/food-5.jpg' },
-  ];
+export class RepasComponent  {
+  constructor(private http: HttpClient, private sanitizer: DomSanitizer) {}
+  ngOnInit(): void {
+    this.fetchMeals();
+    console.log('Meals on init:', this.meals);  
+  }
+  
+  meals: any[] = []; 
 
   isAddMealModalVisible = false;
   isViewMealModalVisible = false;
@@ -18,11 +22,10 @@ export class RepasComponent implements OnInit {
   isDeleteMealModalVisible = false;
 
   newMeal: any = {};
-  selectedMeal: any;
+  fileToUpload: File | null = null;  
+    selectedMeal: any;
 
-  constructor() {}
-
-  ngOnInit(): void {}
+    
 
   showAddMealModal() {
     this.isAddMealModalVisible = true;
@@ -31,12 +34,56 @@ export class RepasComponent implements OnInit {
   closeAddMealModal() {
     this.isAddMealModalVisible = false;
   }
-
-  addMeal() {
-    const newId = this.meals.length + 1;
-    this.meals.push({ ...this.newMeal, id: newId, image: 'assets/images/foods/default.jpg' });
-    this.closeAddMealModal();
+  fetchMeals() {
+    this.http.get('http://localhost:8089/api/admin/repases').subscribe(
+      (response: any) => {
+        console.log('Meals data fetched:', response);  // Log the response
+        this.meals = response;
+      },
+      (error) => {
+        console.error('Error fetching meals:', error);
+      }
+    );
   }
+  
+
+  addMeal(event: Event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+  
+    this.http.post('http://localhost:8089/api/admin/repas', this.newMeal).subscribe(
+      (response: any) => {
+        const mealId = response.id;
+  
+        // Step 2: If there is an image, upload it using the uploadImage endpoint
+        if (this.fileToUpload) {
+          const formData = new FormData();
+          formData.append('file', this.fileToUpload);
+          this.http
+            .post(`http://localhost:8089/api/admin/repas/${mealId}/uploadImage`, formData)
+            .subscribe(
+              (imageResponse: any) => {
+                console.log('Image uploaded successfully:', imageResponse);
+                // Update the meal list with the uploaded image URL
+                response.image = imageResponse.imageUrl; // Assuming image URL is returned as 'imageUrl'
+                this.meals.push(response); 
+                this.closeAddMealModal();
+              },
+              (error) => {
+                console.error('Error uploading image:', error);
+              }
+            );
+        } else {
+          // If no image, just add the meal as is
+          this.meals.push(response);
+          this.closeAddMealModal();
+        }
+      },
+      (error) => {
+        console.error('Error adding meal:', error);
+      }
+    );
+  }
+  
 
   showViewMealModal(meal: any) {
     this.selectedMeal = meal;
@@ -77,13 +124,15 @@ export class RepasComponent implements OnInit {
     this.meals = this.meals.filter((meal) => meal.id !== id);
     this.closeDeleteMealModal();
   }
-
-  handleFileInput(event: any) {
+  handleFileInput(event: any): void {
     const file = event.target.files[0];
     if (file) {
-      this.newMeal.image = URL.createObjectURL(file);
+      this.fileToUpload = file;
+      this.newMeal.image = this.sanitizer.bypassSecurityTrustUrl(URL.createObjectURL(file)); // Sanitize the URL
     }
   }
+  
+  
   onImageChange(event: Event): void {
     const fileInput = event.target as HTMLInputElement;
     if (fileInput.files && fileInput.files[0]) {

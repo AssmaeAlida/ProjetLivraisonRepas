@@ -121,9 +121,9 @@ public class AdminController {
 
 //for admin
 
-    @PostMapping("/signIn/email/{email}/password/{password}")
-    public Admin signIn(@PathVariable String email, @PathVariable String password) {
-        return adminService.signIn(email, password);
+    @PostMapping("/signIn")
+    public Admin signIn(@RequestBody Admin admin) {
+        return adminService.signIn(admin.getEmail(), admin.getPassword());
     }
 
     @PostMapping("/signUp/email/{email}/password/{password}")

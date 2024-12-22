@@ -32,10 +32,11 @@
           <tbody>
             <tr *ngFor="let meal of meals">
               <td>{{ meal.id }}</td>
-              <td><img [src]="meal.image" alt="{{ meal.name }}" class="meal-image" /></td>
-              <td>{{ meal.name }}</td>
+              <td><img [src]="meal.imageUrl" alt="{{ meal.name }}" class="meal-image" />
+              </td>
+              <td>{{ meal.nom }}</td>
               <td>{{ meal.description }}</td>
-              <td>{{ meal.price | currency }}</td>
+              <td>{{ meal.prix | currency }}</td>
               <td>
                 <i class="fa fa-eye action-icon" (click)="showViewMealModal(meal)" title="View"></i>
                 <i class="fa fa-edit action-icon" (click)="showEditMealModal(meal)" title="Edit"></i>
@@ -51,28 +52,14 @@
   <!-- Add Meal Modal -->
   <!-- Add Meal Modal -->
   <div class="modal" *ngIf="isAddMealModalVisible">
-       <div class="modal-content">
+    <div class="modal-content">
       <h3>Add New Meal</h3>
+      
       <!-- Image trigger for file input -->
       <div class="image-upload">
-          <img src="assets/images/foods/defaultImage.jpg" alt="Upload Image" (click)="fileInput.click()" class="upload-icon" />
-          <input
-          type="file"
-          class="file-input"
-          #fileInput
-          (change)="handleFileInput($event)"
-          style="display: none"
-           />
-       </div>  
-    <form class="meal-form" (ngSubmit)="addMeal()">
-      <input type="text" placeholder="Meal Name" [(ngModel)]="newMeal.name" name="name" required />
-      <textarea placeholder="Meal Description" [(ngModel)]="newMeal.description" name="description"></textarea>
-      <input type="number" placeholder="Price" [(ngModel)]="newMeal.price" name="price" required />
-
-      <!-- Image trigger for file input -->
-      <div class="image-upload">
-           
-      <input
+        <!-- Show the selected image or the default image if no image is selected -->
+        <img [src]="newMeal.image || 'assets/images/foods/defaultImage.jpg'" alt="Upload Image" (click)="fileInput.click()" class="upload-icon" />
+        <input
           type="file"
           class="file-input"
           #fileInput
@@ -80,15 +67,36 @@
           style="display: none"
         />
       </div>
-
-      <div class="modal-actions">
-        <button type="submit" class="btn btn-primary">Add</button>
-        <button type="button" class="btn btn-secondary" (click)="closeAddMealModal()">Cancel</button>
-      </div>
-    </form>
+  
+      <form class="meal-form" (ngSubmit)="addMeal($event)">
+        <input
+          type="text"
+          placeholder="Meal Name"
+          [(ngModel)]="newMeal.nom"
+          name="name"
+          required
+        />
+        <textarea
+          placeholder="Meal Description"
+          [(ngModel)]="newMeal.description"
+          name="description"
+        ></textarea>
+        <input
+          type="number"
+          placeholder="Price"
+          [(ngModel)]="newMeal.prix"
+          name="price"
+          required
+        />
+  
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">Add</button>
+          <button type="button" class="btn btn-secondary" (click)="closeAddMealModal()">Cancel</button>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
-
+  
 
   <!-- View Meal Modal -->
   <div class="modal" *ngIf="isViewMealModalVisible">
@@ -108,6 +116,7 @@
 
     <!-- Image trigger for file input -->
     <div class="image-upload">
+     
       <img
         [src]="selectedMeal.image || 'assets/images/foods/defaultImage.jpg'"
         alt="Meal Image"

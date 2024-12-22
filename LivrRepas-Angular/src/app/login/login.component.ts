@@ -29,7 +29,7 @@ export class LoginComponent {
         localStorage.setItem('userId', response.id); // Store user ID in localStorage
         console.log('Retrieved User ID from localStorage:', localStorage.getItem('userId'));
         console.log('isLoggedIn:', this.authService.isLoggedIn());
-        this.router.navigate(['/home']);
+        this.router.navigate(['/']);
         this.message = 'Login successful!';
       } else {
         console.log('Login failed: ', response.message || 'Invalid email or password.');
