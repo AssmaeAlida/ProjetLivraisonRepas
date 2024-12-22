@@ -1,4 +1,7 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class CreateAccountScreen extends StatefulWidget {
   @override
@@ -12,16 +15,86 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
   final _fullNameController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  void _handleSubmit() {
+  // Handle Submit for Login or Signup
+  void _handleSubmit() async {
     if (_formKey.currentState!.validate()) {
+      final fullName = _fullNameController.text;
+      final email = _emailController.text;
+      final password = _passwordController.text;
+
       if (isSignUp) {
-        print("Compte créé : ${_emailController.text}");
-        Navigator.pushReplacementNamed(context, '/home');
+        // Sign Up Logic
+        final url = Uri.parse(
+            'http://localhost:8089/api/user/signUp/fullName/$fullName/email/$email/password/$password');
+
+        try {
+          final response = await http.post(url);
+          if (response.statusCode == 200) {
+            final result = jsonDecode(response.body);
+            print("Inscription réussie : $result");
+            Navigator.pushReplacementNamed(context, '/login');
+          } else {
+            print("Erreur lors de l'inscription : ${response.statusCode}");
+            _showErrorDialog("Erreur lors de l'inscription");
+          }
+        } catch (e) {
+          print("Exception lors de l'inscription : $e");
+          _showErrorDialog("Une erreur s'est produite.");
+        }
       } else {
-        print("Connexion : ${_emailController.text}");
-        Navigator.pushReplacementNamed(context, '/home');
+        // Login Logic
+        final url = Uri.parse('http://localhost:8089/api/user/signIn');
+        final payload = jsonEncode({"email": email, "password": password});
+
+        try {
+          final response = await http.post(
+            url,
+            headers: {"Content-Type": "application/json"},
+            body: payload,
+          );
+
+          print("Login Response: ${response.body}"); // Debugging line
+         if (response.statusCode == 200) {
+  final result = jsonDecode(response.body);
+  // Accessing the 'id' instead of 'userId'
+  final userId = result['id']; 
+
+  // Store userId in SharedPreferences
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  await prefs.setString('userId', userId.toString());
+
+  print("Connexion réussie : $result");
+  Navigator.pushReplacementNamed(context, '/home');
+} else if (response.statusCode == 401) {
+  _showErrorDialog("Identifiants invalides.");
+} else {
+  print("Erreur lors de la connexion : ${response.statusCode}");
+  _showErrorDialog("Erreur lors de la connexion.");
+}
+
+        } catch (e) {
+          print("Exception lors de la connexion : $e");
+          _showErrorDialog("Une erreur lors de la connexion s'est produite.");
+        }
       }
     }
+  }
+
+  // Show error dialog
+  void _showErrorDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text('Erreur'),
+        content: Text(message),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text('OK'),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -109,6 +182,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
     );
   }
 
+  // Build SignUp Form
   Widget buildSignUpForm() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -164,6 +238,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
     );
   }
 
+  // Build Login Form
   Widget buildLoginForm() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
