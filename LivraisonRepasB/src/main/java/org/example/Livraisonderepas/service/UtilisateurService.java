@@ -1,5 +1,6 @@
 package org.example.Livraisonderepas.service;
 
+import org.example.Livraisonderepas.model.Role;
 import org.example.Livraisonderepas.model.User;
 import org.example.Livraisonderepas.repository.UserRepository;
 import org.example.Livraisonderepas.service.Mail.MailService;
@@ -48,7 +49,7 @@ public class UtilisateurService {
         }
     }
 
-    public List<User> findByRole(String role) {
+    public List<User> findByRole(Role role) {
         return userRepository.findByRole(role);
     }
 
@@ -136,4 +137,15 @@ public class UtilisateurService {
                 .orElseThrow(() -> new RuntimeException("User not found."));
         userRepository.delete(existingUser);
     }
+
+    public User addLivreur(User user) {
+        User existingUser = userRepository.findByEmail(user.getEmail());
+        if (existingUser != null) {
+            throw new RuntimeException("User with email " + user.getEmail() + " already exists");
+        }
+        user.setPassword(passwordEncoder.encode(user.getPassword())); // Hash the password before storing
+        user.setRole(Role.LIVREUR);
+        return userRepository.save(user);
+    }
+
 }
