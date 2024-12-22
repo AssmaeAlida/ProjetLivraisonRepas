@@ -1,0 +1,115 @@
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+  
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Top Bar -->
+      <header class="top-bar">
+        <div class="search-bar">
+          <input type="text" placeholder="Search here..." />
+          <i class="icon-search"></i>
+        </div>
+        <div class="icons">
+        
+        
+          
+          
+        
+          <div  class="profile" (click)="toggleDropdown()">
+            <img src="assets/images/photoAdmin.png" alt="Admin Profile" />
+            <span class="profile-name">Hello, Assmae!</span>
+          </div>
+          <div class="dropdown-menu" *ngIf="isDropdownVisible">
+            <button (click)="logout()">Log Out</button>
+          </div>
+        </div>
+        
+      </header>
+  
+      <!-- Dashboard Cards -->
+      <section class="dashboard-cards">
+        <div class="card">
+          <h3>75</h3>
+          <p>Total Orders</p>
+        </div>
+        <div class="card">
+          <h3>357</h3>
+          <p>Total Delivered</p>
+        </div>
+        <div class="card">
+          <h3>65</h3>
+          <p>Total Canceled</p>
+        </div>
+        <div class="card">
+          <h3>$128</h3>
+          <p>Total Revenue</p>
+        </div>
+      </section>
+  
+      <!-- Charts Section -->
+      <section class="charts">
+        <div class="chart-section">
+             <!--
+            <canvas id="pieChart"> </canvas>
+             -->
+                
+            <img src="assets/images/pie-chart.png" alt="Pie Chart" /> 
+     
+        </div>
+        <div class="chart-section">
+          <!--
+          <canvas id="barChart"></canvas>
+             -->
+           
+            <img  src="assets/images/bar-chart.png" alt="Bar Chart" /> 
+       
+        </div>
+      </section>
+      
+      <section class="total-revenue">
+        <div class="line-chart">
+          <!--
+                    <canvas id="lineChart"></canvas>
+
+          -->
+           
+            <img  src="assets/images/line-chart.png" alt="Line Chart" />   
+      </div>
+        <div class="customer-map">
+        <!--
+                    <canvas id="doughnutChart"></canvas>
+          -->
+      
+            <img src="assets/images/map.png" alt="Map" />
+        </div>
+      </section>
+      
+  
+      <!-- Customer Reviews -->
+      <section class="customer-reviews">
+        <h3>Customer Review</h3>
+        <div class="reviews">
+          <div class="review-card">
+            <img src="assets/images/customer1.png" alt="Customer" />
+            <p>Jons Sena</p>
+            <p>Lorem ipsum is simply dummy text...</p>
+            <span>⭐⭐⭐⭐⭐</span>
+          </div>
+          <div class="review-card">
+            <img src="assets/images/customer2.png" alt="Customer" />
+            <p>Sofia</p>
+            <p>Lorem ipsum is simply dummy text...</p>
+            <span>⭐⭐⭐⭐⭐</span>
+          </div>
+          <div class="review-card">
+            <img src="assets/images/customer3.png" alt="Customer" />
+            <p>Anandreansyah</p>
+            <p>Lorem ipsum is simply dummy text...</p>
+            <span>⭐⭐⭐⭐⭐</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  

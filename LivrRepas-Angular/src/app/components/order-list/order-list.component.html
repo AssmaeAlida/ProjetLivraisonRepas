@@ -1,0 +1,67 @@
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Top Bar -->
+    <div class="search-part">
+      <input type="text" placeholder="Search orders..." />
+      <i class="icon-search"></i>
+    </div>
+
+    <!-- Orders List Section -->
+    <section class="orders-section">
+      <div class="header">
+        <h2>Order List</h2>
+      </div>
+
+      <!-- Orders Table -->
+      <div class="orders-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer Name</th>
+              <th>Meals</th>
+              <th>Address</th>
+              <th>Phone Number</th>
+              <th>Date</th>
+              <th>Delivery Person</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of orders">
+              <td>{{ order.id }}</td>
+              <td>{{ order.customerName }}</td>
+              <td>
+                <ul>
+                  <li *ngFor="let meal of order.meals">{{ meal }}</li>
+                </ul>
+              </td>
+              <td>{{ order.address }}</td>
+              <td>{{ order.phoneNumber }}</td>
+              <td>{{ order.date | date: 'medium' }}</td>
+              <td>
+                <select [(ngModel)]="order.deliveryPerson">
+                  <option *ngFor="let person of deliveryPersons" [value]="person">{{ person }}</option>
+                </select>
+              </td>
+              <td>
+                  <button
+                  class="apply-btn"
+                  [ngClass]="{ 'completed-btn': order.isAssigned }"
+                  [disabled]="!order.deliveryPerson || order.isAssigned"
+                  (click)="assignDeliveryPerson(order)">
+                  {{ order.isAssigned ? 'Completed' : 'Assign' }}
+                </button>
+                
+              </td>                  
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>

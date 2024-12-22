@@ -1,19 +1,41 @@
 name: livraisonrepasflutter
-description: "A new Flutter project."
+description: "A new Flutter project for meal delivery."
 publish_to: 'none'
-version: 0.1.0
+version: 0.1.0+1
 
 environment:
-  sdk: ^3.5.3
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
+  provider: ^6.1.0
+  http: ^1.2.2
+  google_maps_flutter: ^2.1.1
+  geolocator: ^9.0.2
+  permission_handler: ^10.3.0
+  image_picker: ^0.8.7+4   
+  shared_preferences: ^2.1.1   # Ajout de la dépendance pour shared_preferences
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^2.0.0
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/chicken_burger.png
+    - assets/cheese_burger.png
+    - assets/burgers.png
+    - assets/delivery.webp
+    - assets/pizzamargherita.jpeg
+    - assets/pizzapepperoni.jpg
+    - assets/cocacola.jpg
+    - assets/fanta.jpg
+    - assets/poms.jpg
+    - assets/chocolatecake.png
+    - assets/top.jpg
+    - assets/boy.webp
+    - assets/girl.png

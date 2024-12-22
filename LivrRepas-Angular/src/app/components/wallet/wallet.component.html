@@ -1,0 +1,49 @@
+<!-- Sidebar -->
+<app-sidebar></app-sidebar>
+
+<!-- Main Wallet Section -->
+<div class="wallet-container">
+  <div class="progress-section">
+    <div class="progress-card">
+      <h3>Last Week</h3>
+      <p class="amount">$99.00</p>
+      <p class="goal">of $500.00 goal</p>
+      <div class="progress-bar" [style.width.%]="(99 / 500) * 100"></div>
+    </div>
+    <div class="progress-card">
+      <h3>Last Month</h3>
+      <p class="amount">$99.00</p>
+      <p class="goal">of $2,500.00 goal</p>
+      <div class="progress-bar" [style.width.%]="(99 / 2500) * 100"></div>
+    </div>
+  </div>
+
+  <h2>Previous Payments</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Customer</th>
+        <th>Email</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Purchase Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let payment of payments">
+        <td>{{ payment.customerName }}</td>
+        <td>{{ payment.email }}</td>
+        <td>${{ payment.amount.toFixed(2) }}</td>
+        <td [ngClass]="{'active': payment.status === 'Active', 'canceled': payment.status === 'Canceled'}">
+          {{ payment.status }}
+        </td>
+        <td>{{ payment.date }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="totals">
+    <p>Total Active Amount: ${{ getTotalAmount('Active').toFixed(2) }}</p>
+    <p>Total Canceled Amount: ${{ getTotalAmount('Canceled').toFixed(2) }}</p>
+  </div>
+</div>

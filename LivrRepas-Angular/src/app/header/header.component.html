@@ -23,6 +23,7 @@
 
     <!-- Icons Section -->
     <div class="icons">
+      <!-- Cart Icon -->
       <a href="/cart-page" class="cart-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 20 22" fill="none">
           <path
@@ -35,13 +36,14 @@
       </a>
 
       <!-- Show Profile Image or Login Button -->
-      <ng-container *ngIf="isLoggedIn; else showLoginButton">
+      <ng-container *ngIf="authService.isLoggedIn(); else showLoginButton">
         <div class="profile-container" (click)="toggleDropdown()">
           <img [src]="profileImage" alt="Profile" class="profile-image" />
 
           <div class="dropdown" *ngIf="showDropdown">
             <a routerLink="/profile">Mon profil</a>
-              <a href="/login" (click)="logout()">Logout</a>          </div>
+            <a href="#" (click)="logout()">Logout</a>
+          </div>
         </div>
       </ng-container>
 

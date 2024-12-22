@@ -1,6 +1,5 @@
 package org.example.Livraisonderepas.service;
 
-import org.example.Livraisonderepas.model.Role;
 import org.example.Livraisonderepas.model.User;
 import org.example.Livraisonderepas.repository.UserRepository;
 import org.example.Livraisonderepas.service.Mail.MailService;
@@ -49,26 +48,20 @@ public class UtilisateurService {
         }
     }
 
-
-
-    @Transactional
-    public User addLivreur(User livreur) {
-        User existingUser = userRepository.findByEmail(livreur.getEmail());
-        if (existingUser != null) {
-            throw new RuntimeException("User with email " + livreur.getEmail() + " already exists");
-        }
-        livreur.setFullName(livreur.getFullName());
-        livreur.setEmail(livreur.getEmail());
-        livreur.setRole(Role.LIVREUR);
-        livreur.setLieu(livreur.getLieu());
-        livreur.setDatenaissance(livreur.getDatenaissance());
-        livreur.setNumTel(livreur.getNumTel());
-        livreur.setPassword(passwordEncoder.encode(livreur.getPassword())); // Hash the password before storing
-        return userRepository.save(livreur);
+    public List<User> findByRole(String role) {
+        return userRepository.findByRole(role);
     }
 
+    @Transactional
+    public User addUtilisateur(User user) {
+        User existingUser = userRepository.findByEmail(user.getEmail());
+        if (existingUser != null) {
+            throw new RuntimeException("User with email " + user.getEmail() + " already exists");
+        }
+        user.setPassword(passwordEncoder.encode(user.getPassword())); // Hash the password before storing
+        return userRepository.save(user);
+    }
 
-//Client et Livreur
     public List<User> findAll() {
         return userRepository.findAll();
     }
@@ -110,32 +103,31 @@ public class UtilisateurService {
     }
 
 
-  @Transactional
-public User updateUser(User updatedUser) {//Pour Livreur aussi
-    User existingUser = userRepository.findById(updatedUser.getId())
-            .orElseThrow(() -> new RuntimeException("User not found."));
-    if (updatedUser.getFullName() != null) {
-        existingUser.setFullName(updatedUser.getFullName());
-    }
-    if (updatedUser.getRole() != null) {
-        existingUser.setRole(updatedUser.getRole());
-    }
-    if (updatedUser.getEmail() != null) {
-        existingUser.setEmail(updatedUser.getEmail());
-    }
-    if (updatedUser.getPassword() != null) {
-        existingUser.setPassword(passwordEncoder.encode(updatedUser.getPassword()));
-    }
-    if (updatedUser.getNumTel() != null) {
-          existingUser.setNumTel(updatedUser.getNumTel());
-    }
-
-    if (updatedUser.getLieu() != null) {
+    @Transactional
+    public User updateUser(User updatedUser) {
+        User existingUser = userRepository.findById(updatedUser.getId())
+                .orElseThrow(() -> new RuntimeException("User not found."));
+        if (updatedUser.getFullName() != null) {
+            existingUser.setFullName(updatedUser.getFullName());
+        }
+        if (updatedUser.getRole() != null) {
+            existingUser.setRole(updatedUser.getRole());
+        }
+        if (updatedUser.getEmail() != null) {
+            existingUser.setEmail(updatedUser.getEmail());
+        }
+        if (updatedUser.getPassword() != null) {
+            existingUser.setPassword(passwordEncoder.encode(updatedUser.getPassword()));
+        }
+        if (updatedUser.getNumTel() != null) {
+            existingUser.setNumTel(updatedUser.getNumTel());
+        }
+        if (updatedUser.getLieu() != null) {
             existingUser.setLieu(updatedUser.getLieu());
+        }
+        // Add other fields like name, address, etc.
+        return userRepository.save(existingUser);
     }
-    // Add other fields like name, address, etc.
-    return userRepository.save(existingUser);
-}
 
 
     @Transactional

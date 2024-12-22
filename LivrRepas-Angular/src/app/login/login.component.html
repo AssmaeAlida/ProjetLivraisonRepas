@@ -1,8 +1,7 @@
-<!-- main-container: un conteneur parent qui prend toute la hauteur -->
 <div class="main-container">
   <div class="login-container">
-    <h2 > Login</h2>
-    <form #loginForm="">
+    <h2>Login</h2>
+    <form (submit)="login(); $event.preventDefault()">
       <!-- Email Input -->
       <div class="form-group">
         <label for="email">Email</label>
@@ -12,6 +11,7 @@
           class="form-control"
           name="email"
           placeholder="Enter your email..."
+          [(ngModel)]="email"  
           required
         />
       </div>
@@ -25,6 +25,7 @@
           class="form-control"
           name="password"
           placeholder="Enter your password..."
+          [(ngModel)]="password"
           required
         />
         <div class="forget-password">
@@ -33,9 +34,14 @@
       </div>
 
       <!-- Login Button -->
-      <button   type="submit" class="btn-login" >
+      <button type="submit" class="btn-login">
         Login
       </button>
+
+      <!-- Error Message -->
+      <div *ngIf="message" class="error-message">
+        {{ message }}
+      </div>
 
       <!-- Divider and Create Account Link -->
       <div class="divider">
@@ -45,8 +51,8 @@
       </div>
       <div class="create-account">
         <p>
-          Don't have an account? 
-          <a  href="/register" >Create your account here</a>
+          Don't have an account?
+          <a href="/register">Create your account here</a>
         </p>
       </div>
     </form>

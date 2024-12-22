@@ -1,0 +1,124 @@
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Top Bar -->
+    <div class="search-part">
+      <input type="text" placeholder="Search Delivery Person..." />
+      <i class="icon-search"></i>
+    </div>
+
+    <!-- Delivery Persons List Section -->
+    <section class="livreurs-section">
+      <div class="header">
+        <h2 >Delivery Persons</h2>
+        <button class="add-livreur-btn" (click)="showAddLivreurModal()">Add Delivery Person</button>
+      </div>
+
+      <!-- Delivery Persons Table -->
+      <div class="livreurs-table">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Image</th>
+              <th>Full Name</th>
+              <th>Email Address</th>
+              <th>Phone Number</th>
+              <th>Orders Completed</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let livreur of livreurs">
+              <td>{{ livreur.id }}</td>
+              <td><img [src]="livreur.image" alt="{{ livreur.fullName }}" class="livreur-image" /></td>
+              <td>{{ livreur.fullName }}</td>
+              <td>{{ livreur.email }}</td>
+              <td>{{ livreur.phone }}</td>
+              <td>{{ livreur.ordersCompleted }}</td>
+              <td>
+                <i class="fa fa-eye action-icon" (click)="showViewLivreurModal(livreur)" title="View"></i>
+                <i class="fa fa-edit action-icon" (click)="showEditLivreurModal(livreur)" title="Edit"></i>
+                <i class="fa fa-trash action-icon" (click)="showDeleteLivreurModal(livreur)" title="Delete"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modals -->
+  <!-- Add Delivery Person Modal -->
+  <div class="modal" *ngIf="isAddLivreurModalVisible">
+    <div class="modal-content">
+      <h3>Add New Delivery Person</h3>
+       <!-- Image Upload -->
+       <div class="image-upload">
+        <img src="assets/images/foods/defaultImage.jpg" alt="Upload Image" class="upload-icon" (click)="fileInput.click()" />
+        <input
+          type="file"
+          class="file-input"
+          #fileInput
+          (change)="handleFileInput($event)"
+          style="display: none"
+        />
+      </div>
+      <form class="livreur-form" (ngSubmit)="addLivreur()">
+        <input type="text" placeholder="Full Name" [(ngModel)]="newLivreur.fullName" name="fullName" required />
+        <input type="email" placeholder="Email Address" [(ngModel)]="newLivreur.email" name="email" required />
+        <input type="text" placeholder="Phone Number" [(ngModel)]="newLivreur.phone" name="phone" required />
+        <input type="number" placeholder="Orders Completed" [(ngModel)]="newLivreur.ordersCompleted" name="ordersCompleted" />
+
+       
+
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">Add</button>
+          <button type="button" class="btn btn-secondary" (click)="closeAddLivreurModal()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- View Delivery Person Modal -->
+  <div class="modal" *ngIf="isViewLivreurModalVisible">
+    <div class="modal-content">
+      <h3>{{ selectedLivreur?.fullName }}</h3>
+      <p><strong>Email:</strong> {{ selectedLivreur?.email }}</p>
+      <p><strong>Phone:</strong> {{ selectedLivreur?.phone }}</p>
+      <p><strong>Orders Completed:</strong> {{ selectedLivreur?.ordersCompleted }}</p>
+      <img [src]="selectedLivreur?.image" alt="{{ selectedLivreur?.fullName }}" />
+      <button (click)="closeViewLivreurModal()">Close</button>
+    </div>
+  </div>
+
+  <!-- Edit Delivery Person Modal -->
+  <div class="modal" *ngIf="isEditLivreurModalVisible">
+    <div class="modal-content">
+      <h3>Edit Delivery Person</h3>
+      <form (ngSubmit)="updateLivreur()">
+        <input type="text" [(ngModel)]="selectedLivreur.fullName" name="fullName" required />
+        <input type="email" [(ngModel)]="selectedLivreur.email" name="email" required />
+        <input type="text" [(ngModel)]="selectedLivreur.phone" name="phone" required />
+        <input type="number" [(ngModel)]="selectedLivreur.ordersCompleted" name="ordersCompleted" />
+
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">Update</button>
+          <button type="button" class="btn btn-secondary" (click)="closeEditLivreurModal()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Delete Delivery Person Modal -->
+  <div class="modal" *ngIf="isDeleteLivreurModalVisible">
+    <div class="modal-content">
+      <h3>Are you sure you want to delete {{ selectedLivreur?.fullName }}?</h3>
+      <button (click)="deleteLivreur(selectedLivreur?.id)">Yes</button>
+      <button (click)="closeDeleteLivreurModal()">No</button>
+    </div>
+  </div>
+</div>

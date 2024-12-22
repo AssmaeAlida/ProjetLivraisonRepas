@@ -17,6 +17,17 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { FirstPageComponent } from './first-page/first-page.component';
 import { FoodFilterComponent } from './food-filter/food-filter.component';
 import { ProfileComponent } from './profile/profile.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LivreurComponent } from './components/livreur/livreur.component';
+import { RepasComponent } from './components/repas/repas.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { OrderListComponent } from './components/order-list/order-list.component';
+import { ReviewsComponent } from './components/reviews/reviews.component';
+import { WalletComponent } from './components/wallet/wallet.component';
+import { LoginAdminComponent } from './components/login-admin/login-admin.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,14 +43,26 @@ import { ProfileComponent } from './profile/profile.component';
     ForgetPasswordComponent,
     FirstPageComponent,
     FoodFilterComponent,
-    ProfileComponent
+    ProfileComponent,
+    DashboardComponent,
+    LivreurComponent,
+    RepasComponent,
+    SettingsComponent,
+    SidebarComponent,
+    OrderListComponent,
+    ReviewsComponent,
+    WalletComponent,
+    LoginAdminComponent,
+    LoginComponent
+
   ],
   imports: [
-   
+     
     BrowserModule,
     AppRoutingModule,
     RatingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

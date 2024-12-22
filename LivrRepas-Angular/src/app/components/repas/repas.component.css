@@ -1,0 +1,189 @@
+.meals-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .meals-section .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .meals-section .header h2 {
+    margin-left: 24%;
+    font-size: 24px;
+    color: #2c3e50;
+  }
+  
+  .add-meal-btn {
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-right: 10%;
+  }
+  .meals-table table {
+    border-radius: 10px;
+    margin-left: 23%;
+    width: 70%;
+    border-collapse: collapse;
+    table-layout: fixed;
+
+}
+
+.meals-table th, .meals-table td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word;
+}
+
+.meals-table th {
+    background-color: #f0f0f0;
+    color: #333;
+    font-weight: bold;
+}
+
+.meals-table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.meals-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.search-part {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-part input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 39%;
+    margin-left: 41%;
+    margin-top: 6%;
+}
+.meals-table img.meal-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+/********icons*********/
+.action-icon {
+    font-size: 20px;
+    color: #4caf50;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: transform 0.3s, color 0.3s;
+  }
+  
+  .action-icon:hover {
+    transform: scale(1.2);
+    color: #388e3c; /* Teinte légèrement plus foncée pour le hover */
+  }
+  /******modal***/
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+    z-index: 1000;
+    width: 400px;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .modal h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #2c3e50;
+    text-align: center;
+  }
+  
+  .modal button {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .modal button[type='submit'] {
+    background: #4caf50;
+    color: white;
+    transition: background 0.3s;
+    margin-left: 56%;
+  }
+  
+  .modal button[type='submit']:hover {
+    background: #388e3c;
+  }
+  
+  .modal button[type='button'] {
+    background: #f1f1f1;
+    color: #333;
+    transition: background 0.3s;
+    margin-left: 2%;
+  }
+  
+  .modal button[type='button']:hover {
+    background: #ddd;
+  }
+  
+  .modal input, .modal textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -40%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .image-upload {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; /* Espacement sous l'image */
+  }
+  
+  .upload-icon {
+    width: 100px; /* Taille de l'image */
+    height: 100px; /* Taille de l'image */
+    border-radius: 50%; /* Pour rendre l'image circulaire */
+    object-fit: cover; /* Pour garder la proportion de l'image */
+    cursor: pointer; /* Pour montrer que l'image est cliquable */
+    margin-bottom: 10px; /* Espacement entre l'image et les champs */
+  }
+  
+  .file-input {
+    margin-top: 10px;
+    display: none;
+  }
