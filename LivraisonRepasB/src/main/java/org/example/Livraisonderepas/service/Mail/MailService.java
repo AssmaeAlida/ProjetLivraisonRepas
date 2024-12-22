@@ -1,5 +1,8 @@
 package org.example.Livraisonderepas.service.Mail;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import javax.mail.*;
@@ -11,9 +14,12 @@ import java.util.Properties;
 @Service
 public class MailService {
 
+
     public void sendMail(String to, String subject, String content) throws MessagingException {
-        final String username = "selmaarraouen@gmail.com";
+        final String username = "abdrrahmanmimani@gmail.com";
         final String password = "cqnn hcir vvgh bzqj";
+
+
 
         Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp.gmail.com");
@@ -29,7 +35,7 @@ public class MailService {
                 });
 
         Message message = new MimeMessage(session);
-        message.setFrom(new InternetAddress("selmaarraouen@gmail.com"));
+        message.setFrom(new InternetAddress("abdrrahmanmimani@gmail.com"));
         message.setRecipients(
                 Message.RecipientType.TO,
                 InternetAddress.parse(to)

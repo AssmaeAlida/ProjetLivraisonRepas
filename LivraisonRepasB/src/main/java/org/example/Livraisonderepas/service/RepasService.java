@@ -27,8 +27,7 @@ public class RepasService {
     public Repas uploadImage(Long id,MultipartFile file)throws IOException {
         String baseUrl = ".\\images\\Repas\\";
         String filename = StringUtils.cleanPath(file.getOriginalFilename());
-//C:\Users\pc\Tps_JEE_ProfCHAKRI\projet-multiplateforme-e2425g7_3\LivraisonRepasB
-        Path storageDirectory = Paths.get("C:\\Users\\pc\\Tps_JEE_ProfCHAKRI\\projet-multiplateforme-e2425g7_3\\E-comerce_Front-end-React\\e-comerce_front-end_react\\public\\images\\Profil\\");
+        Path storageDirectory = Paths.get("C:\\Users\\pc\\Tps_JEE_ProfCHAKRI\\projet-multiplateforme-e2425g7_3\\LivrRepas-Angular\\src\\assets\\images\\Repas");
         if (!Files.exists(storageDirectory)) {
             Files.createDirectories(storageDirectory);
         }
@@ -36,11 +35,14 @@ public class RepasService {
         Path destinationPath = storageDirectory.resolve(Path.of(filename));
         file.transferTo(destinationPath);
 
-
-        Repas repas = repasRepository.findById(id).get();
-        repas.setImageUrl(baseUrl + filename);
-        repasRepository.save(repas);
-        return repas;
+        Optional<Repas> optionalRepas = repasRepository.findById(id);
+        if (optionalRepas.isPresent()) {
+            Repas repas = optionalRepas.get();
+            repas.setImageUrl(baseUrl + filename);
+            repasRepository.save(repas);
+            return repas;
+        }
+        return null;
     }
 
     // Create a new repas
@@ -68,7 +70,7 @@ public class RepasService {
             repas.setDescription(repasDetails.getDescription());
             repas.setPrix(repasDetails.getPrix());
             repas.setCategorie(repasDetails.getCategorie());
-            repas.setImageUrl(repasDetails.getImageUrl());
+            //repas.setImageUrl(repasDetails.getImageUrl());
             return repasRepository.save(repas);
         } else {
             return null;

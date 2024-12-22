@@ -11,4 +11,5 @@ public interface RepasRepository extends JpaRepository<Repas, Long> {
 
 
     Collection<Repas> findByCategorie(Categorie categorie);
+    Repas findById(long id);
 }

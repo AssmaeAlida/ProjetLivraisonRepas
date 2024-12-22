@@ -4,185 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="179e0cc2-0299-46eb-b614-112b7d6e0a8c" name="Changes" comment="commit selma">
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/.browserslistrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/angular.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/e2e/protractor.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/e2e/src/app.e2e-spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/e2e/src/app.po.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/e2e/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/karma.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/app-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/app.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/app.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/app.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/cart-page/cart-page.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/cart-page/cart-page.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/cart-page/cart-page.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/cart-page/cart-page.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/first-page/first-page.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/first-page/first-page.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/first-page/first-page.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/food-filter/food-filter.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/food-filter/food-filter.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/food-filter/food-filter.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/food-filter/food-filter.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/food-page/food-page.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/food-page/food-page.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/food-page/food-page.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/food-page/food-page.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/forget-password/forget-password.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/forget-password/forget-password.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/forget-password/forget-password.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/forget-password/forget-password.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/header/header.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/header/header.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/header/header.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/header/header.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/home/home.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/home/home.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/home/home.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/home/home.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/login/login.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/login/login.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/login/login.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/login/login.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/not-found/not-found.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/not-found/not-found.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/not-found/not-found.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/not-found/not-found.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/profile/profile.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/profile/profile.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/profile/profile.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/profile/profile.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/register/register.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/register/register.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/register/register.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/register/register.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/search/search.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/search/search.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/search/search.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/search/search.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/services/cart/cart.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/services/cart/cart.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/services/food/food.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/services/food/food.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/shared/models/Cart.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/shared/models/CartItem.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/shared/models/Food.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/shared/models/Tag.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/tags/tags.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/tags/tags.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/tags/tags.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/tags/tags.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/foods/Ellipse9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/foods/Frame 14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/foods/Frame 15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/foods/Frame 18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/foods/Group40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/foods/Order food-pana1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/foods/Take Away-rafiki1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/foods/Waiters-rafiki1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/foods/food-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/foods/food-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/foods/food-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/foods/food-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/foods/food-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/foods/food-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/foods/food-7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/foods/food-8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/foods/image46.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/foods/photoProfile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/tags/all.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/tags/fastfood.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/tags/fry.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/tags/hamburger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/tags/lunch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/tags/pizza.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/tags/slowfood.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/assets/images/tags/soup.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/environments/environment.prod.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/environments/environment.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/polyfills.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/tsconfig.app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/tsconfig.spec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivrRepas-Angular/tslint.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivraisonRepasAngular/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/repository/AdminRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/repository/CommandeItemRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/repository/CommentaireRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/repository/RepasItemRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/service/Mail/MailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/service/UtilisateurService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivrRepas-Angular/src/app/first-page/first-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/first-page/first-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/LivrRepas-Angular/.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/LivrRepas-Angular/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/.vscode/extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/.vscode/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/.vscode/tasks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/app.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/src/app/app.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/app/app.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/src/app/app.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/src/app/app.routes.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/LivrRepas-Angular/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasAngular/tsconfig.spec.json" beforeDir="false" />
+    <list default="true" id="179e0cc2-0299-46eb-b614-112b7d6e0a8c" name="Changes" comment="commit selma2">
+      <change afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LivraisonRepasB/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/model/Commande.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/model/Commande.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/model/CommandeItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/model/CommandeItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/model/Commentaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/model/Commentaire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/model/Repas.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/model/Repas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/model/RepasItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/model/RepasItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/repository/CommandeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/repository/CommandeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/LivraisonDeRepasApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/LivraisonDeRepasApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/model/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/repository/RepasRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/repository/RepasRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/common/SecurityParams.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/controller/ClientController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/controller/DeliveryController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/jwt/JwtAuthenticationFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/jwt/JwtAutorisationFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/jwt/JwtConstant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/jwt/JwtResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/jwt/JwtUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/model/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/model/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/model/Livreur.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/model/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/repository/ClientRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/repository/RoleDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/repository/UserDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/service/ClientService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/service/RoleService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/security/service/impl/UserServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/service/CommandeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/service/CommandeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/service/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/service/Mail/MailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/service/Mail/MailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/service/RepasService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/service/RepasService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/service/UtilisateurService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/java/org/example/Livraisonderepas/service/UtilisateurService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LivraisonRepasB/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/LivraisonRepasB/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -204,22 +41,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/pc/Tps_JEE_ProfCHAKRI/projet-multiplateforme-e2425g7_3",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "ts.external.directory.path": "C:\\Users\\pc\\Tps_JEE_ProfCHAKRI\\projet-multiplateforme-e2425g7_3\\LivrRepas-Angular\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/pc/Tps_JEE_ProfCHAKRI/projet-multiplateforme-e2425g7_3&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\pc\\Tps_JEE_ProfCHAKRI\\projet-multiplateforme-e2425g7_3\\LivrRepas-Angular\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\pc\Tps_JEE_ProfCHAKRI\projet-multiplateforme-e2425g7_3" />
@@ -233,8 +70,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1732750552178</updated>
-      <workItem from="1732750553400" duration="1224000" />
+      <workItem from="1732750553400" duration="1595000" />
+      <workItem from="1734515538266" duration="1116000" />
     </task>
+    <task id="LOCAL-00001" summary="commit selma2">
+      <created>1732753977063</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732753977063</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +88,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit selma" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit selma" />
+    <MESSAGE value="commit selma2" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit selma2" />
   </component>
 </project>

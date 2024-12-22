@@ -11,11 +11,12 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String nom;
-    private String prenom;
+    private String fullName;
     private String email;
     private String password;
-    private String role; //client ou livreur
+
+    @Enumerated(EnumType.STRING)
+    private Role role; //client ou livreur
     private String lieu;
     private Date datenaissance;
     private String numTel;
@@ -44,22 +45,6 @@ public class User {
         this.id = id;
     }
 
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -76,11 +61,11 @@ public class User {
         this.password = password;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 
@@ -138,5 +123,13 @@ public class User {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 }

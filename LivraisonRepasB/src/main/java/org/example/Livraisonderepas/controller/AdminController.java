@@ -3,6 +3,7 @@ package org.example.Livraisonderepas.controller;
 
 import org.example.Livraisonderepas.model.Repas;
 import org.example.Livraisonderepas.model.Admin;
+import org.example.Livraisonderepas.model.Role;
 import org.example.Livraisonderepas.model.User;
 import org.example.Livraisonderepas.service.AdminService;
 import org.example.Livraisonderepas.service.RepasService;
@@ -31,11 +32,13 @@ public class AdminController {
 
     //for repas
 
-    @PostMapping("/repas/{id}/uploadImage")
-    public ResponseEntity<Repas> uploadImage(@PathVariable Long id, @RequestParam("file") MultipartFile file) throws IOException {
-        Repas repas = repasService.uploadImage(id, file);
-        return new ResponseEntity<>(repas, HttpStatus.OK);
+    //upload image for repas
+    @PostMapping(value = "/uploadImage", consumes = {"multipart/form-data"})
+    public Repas uploadImage(@RequestParam("id") Long id, @RequestParam("file") MultipartFile file) throws IOException {
+        return repasService.uploadImage(id, file);
     }
+
+
 
     // Create a new repas
     @PostMapping("/repas")
@@ -92,10 +95,10 @@ public class AdminController {
         return userService.findAll();
     }
 
-    @GetMapping("/role/{role}")
-    public Collection<User> findByRole(@PathVariable String role) {
-        return userService.findByRole(role);
-    }
+//    @GetMapping("/role/{role}")
+//    public Collection<User> findByRole(@PathVariable Role role) {
+//        return userService.findByRole(role);
+//    }
 
     @GetMapping("/{id}")
     public User findById(@PathVariable Long id) {
@@ -115,8 +118,8 @@ public class AdminController {
 
     //adduser
     @PostMapping("/")
-    public User addUser(@RequestBody User user) {
-        return userService.addUtilisateur(user);
+    public User addLivreur(@RequestBody User user) {
+        return userService.addLivreur(user);
     }
 
 //for admin
@@ -126,8 +129,10 @@ public class AdminController {
         return adminService.signIn(email, password);
     }
 
-    @PostMapping("/signUp/email/{email}/password/{password}")
-    public int signUp(@PathVariable String email,@PathVariable String password) {
-        return adminService.signUp(email, password);
+    @PostMapping("/signUp/fullName/{fullName}/email/{email}/password/{password}")
+    public int signUp(@PathVariable String fullName,@PathVariable String email,@PathVariable String password) {
+        return adminService.signUp(fullName,email, password);
     }
+
+
 }

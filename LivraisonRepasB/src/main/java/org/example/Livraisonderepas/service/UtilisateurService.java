@@ -1,5 +1,6 @@
 package org.example.Livraisonderepas.service;
 
+import org.example.Livraisonderepas.model.Role;
 import org.example.Livraisonderepas.model.User;
 import org.example.Livraisonderepas.repository.UserRepository;
 import org.example.Livraisonderepas.service.Mail.MailService;
@@ -34,10 +35,11 @@ public class UtilisateurService {
         return null;
     }
 
-    public int signUp(String email, String password) {
+    public int signUp(String fullName,String email, String password) {
         User existingUser = userRepository.findByEmail(email);
         if (existingUser == null) {
             User newUser = new User();
+            newUser.setFullName(fullName);
             newUser.setEmail(email);
             newUser.setPassword(passwordEncoder.encode(password)); // Hash the password before storing
             userRepository.save(newUser);
@@ -47,24 +49,31 @@ public class UtilisateurService {
         }
     }
 
-    public List<User> findByRole(String role) {
-        return userRepository.findByRole(role);
-    }
+
 
     @Transactional
-    public User addUtilisateur(User user) {
-        User existingUser = userRepository.findByEmail(user.getEmail());
+    public User addLivreur(User livreur) {
+        User existingUser = userRepository.findByEmail(livreur.getEmail());
         if (existingUser != null) {
-            throw new RuntimeException("User with email " + user.getEmail() + " already exists");
+            throw new RuntimeException("User with email " + livreur.getEmail() + " already exists");
         }
-        user.setPassword(passwordEncoder.encode(user.getPassword())); // Hash the password before storing
-        return userRepository.save(user);
+        livreur.setFullName(livreur.getFullName());
+        livreur.setEmail(livreur.getEmail());
+        livreur.setRole(Role.LIVREUR);
+        livreur.setLieu(livreur.getLieu());
+        livreur.setDatenaissance(livreur.getDatenaissance());
+        livreur.setNumTel(livreur.getNumTel());
+        livreur.setPassword(passwordEncoder.encode(livreur.getPassword())); // Hash the password before storing
+        return userRepository.save(livreur);
     }
 
+
+//Client et Livreur
     public List<User> findAll() {
         return userRepository.findAll();
     }
 
+    @Transactional
     public User forgotPassword(String email) {
         User user = userRepository.findByEmail(email);
         if (user != null) {
@@ -84,6 +93,7 @@ public class UtilisateurService {
     }
 
 
+    @Transactional
     public User changePassword(String token, String newPassword) {
         User user = userRepository.findByToken(token);
         if (user != null) {
@@ -101,14 +111,11 @@ public class UtilisateurService {
 
 
   @Transactional
-public User updateUser(User updatedUser) {
+public User updateUser(User updatedUser) {//Pour Livreur aussi
     User existingUser = userRepository.findById(updatedUser.getId())
             .orElseThrow(() -> new RuntimeException("User not found."));
-    if (updatedUser.getNom() != null) {
-        existingUser.setNom(updatedUser.getNom());
-    }
-    if (updatedUser.getPrenom() != null) {
-        existingUser.setPrenom(updatedUser.getPrenom());
+    if (updatedUser.getFullName() != null) {
+        existingUser.setFullName(updatedUser.getFullName());
     }
     if (updatedUser.getRole() != null) {
         existingUser.setRole(updatedUser.getRole());
@@ -118,6 +125,13 @@ public User updateUser(User updatedUser) {
     }
     if (updatedUser.getPassword() != null) {
         existingUser.setPassword(passwordEncoder.encode(updatedUser.getPassword()));
+    }
+    if (updatedUser.getNumTel() != null) {
+          existingUser.setNumTel(updatedUser.getNumTel());
+    }
+
+    if (updatedUser.getLieu() != null) {
+            existingUser.setLieu(updatedUser.getLieu());
     }
     // Add other fields like name, address, etc.
     return userRepository.save(existingUser);

@@ -30,10 +30,11 @@ public class AdminService  {
     }
 
     @Transactional
-    public int signUp(String email, String password) {
+    public int signUp(String fullName  ,String email, String password) {
         Admin loadedAdmin = adminRepository.findByEmail(email);
         if (loadedAdmin == null) {
             Admin admin = new Admin();
+            admin.setFullName(fullName);
             admin.setEmail(email);
             admin.setPassword(passwordEncoder.encode(password));
             adminRepository.save(admin);

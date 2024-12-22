@@ -12,8 +12,7 @@ public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nom;
-    private String prenom;
+    private String FullName;
     private String email;
     private String password;
     private String role;
@@ -36,20 +35,12 @@ public class Admin {
         this.id = id;
     }
 
-    public String getNom() {
-        return nom;
+    public String getFullName() {
+        return FullName;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+    public void setFullName(String fullName) {
+        FullName = fullName;
     }
 
     public String getEmail() {
