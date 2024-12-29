@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:livraisonrepasflutter/screens/CreateAccountScreen.dart';
-import 'package:http/http.dart' as http;
-
+import 'package:livraisonrepasflutter/screens/Delivery/CreateAccountScreen.dart';
 
 class SelectScreen extends StatelessWidget {
   @override
@@ -9,7 +8,7 @@ class SelectScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: Center( // Utilisation de Center pour centrer la colonne
+        child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -22,7 +21,7 @@ class SelectScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 30),
-              GestureDetector( // Ajout de GestureDetector pour le clic
+              GestureDetector(
                 onTap: () {
                   Navigator.push(
                     context,
@@ -35,9 +34,18 @@ class SelectScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 50),
-              IdentityCard(
-                imagePath: 'assets/boy.webp', // Chemin vers l'image "Delivery"
-                label: 'Delivery',
+              GestureDetector(
+                onTap: () {
+                  print('Delivery card clicked'); // Message de débogage
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CreateAccountScreenD()), // Redirige vers HomeScreen
+                  );
+                },
+                child: IdentityCard(
+                  imagePath: 'assets/boy.webp', // Chemin vers l'image "Delivery"
+                  label: 'Delivery',
+                ),
               ),
             ],
           ),

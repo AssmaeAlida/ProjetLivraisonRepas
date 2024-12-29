@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:livraisonrepasflutter/screens/LoginScreen.dart';
 import 'package:livraisonrepasflutter/screens/home_screen.dart'; // Import du fichier HomeScreen.dart
 import 'package:livraisonrepasflutter/screens/SelectScreen.dart';
+import 'package:livraisonrepasflutter/screens/Delivery/HomeScreenD.dart';
+
 
 
 void main() {
@@ -19,6 +21,8 @@ class MyApp extends StatelessWidget {
         '/login': (context) => LoginScreen(),
         '/home': (context) => HomeScreen(), // Ajout de la route vers HomeScreen
         '/SelectScreen':(context) => SelectScreen(),
+        '/homeD': (context) => HomeScreenD(),
+
       },
     );
   }

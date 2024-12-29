@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:livraisonrepasflutter/screens/home_screen.dart';
+import 'package:livraisonrepasflutter/screens/Delivery/HomeScreenD.dart';
 
 class OrderCompletedScreenD extends StatelessWidget {
   @override
@@ -72,7 +72,7 @@ class OrderCompletedScreenD extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                    Navigator.push(context,MaterialPageRoute(builder: (context) => HomeScreen())); // Retour à la page précédente
+                    Navigator.push(context,MaterialPageRoute(builder: (context) => HomeScreenD())); // Retour à la page précédente
 
                       // Logic to submit feedback
                     },
@@ -81,7 +81,7 @@ class OrderCompletedScreenD extends StatelessWidget {
                   TextButton(
                     onPressed: () {
                       // Logic to skip feedback
-                      Navigator.push(context,MaterialPageRoute(builder: (context) => HomeScreen())); // Retour à la page précédente
+                      Navigator.push(context,MaterialPageRoute(builder: (context) => HomeScreenD())); // Retour à la page précédente
                     },
                     child: Text("Skip"),
                   ),
